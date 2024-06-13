@@ -18,7 +18,7 @@ routes.get("/health-check", (req: Request, res: Response) => {
   }
 });
 
-routes.post("/api/url", createShortUrl);
+routes.post("/api/url", validation(shortUrlValidation), createShortUrl);
 
 routes.get("/:shortid", handleRedirect);
 
