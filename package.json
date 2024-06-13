@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "url shortner",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "nodemon src/app.ts"
+  },
+  "author": "gokul",
+  "git": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.2",
+    "@types/yup": "^0.32.0",
+    "chalk": "^4.1.2",
+    "config": "^3.3.11",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "nanoid": "^5.0.7",
+    "ts-node": "^10.9.2",
+    "yup": "^1.4.0"
+  }
+}
