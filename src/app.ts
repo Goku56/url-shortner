@@ -3,8 +3,9 @@ import chalk from "chalk";
 import cors from "cors";
 import { config } from "./config";
 import routes from "./routes/index";
+import db from "./db";
 
-
+db();
 const app = express();
 app.use(express.json());
 app.use(cors());

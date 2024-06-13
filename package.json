@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "url shortner",
-  "main": "app.ts",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/app.ts"
+    "dev": "nodemon --config nodemon.json src/app.ts"
   },
   "author": "gokul",
   "git": "",

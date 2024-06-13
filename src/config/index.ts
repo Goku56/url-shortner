@@ -1,7 +1,9 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const { PORT } = process.env;
+const { PORT,DB_URL } = process.env;
 
 export const config = {
-  PORT: 4000,
+  PORT: PORT,
+  DB_URL: DB_URL,
 };

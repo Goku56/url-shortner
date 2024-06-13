@@ -1,4 +1,10 @@
 import { Request, Response } from "express";
+import {
+  createShortUrl,
+  handleRedirect,
+} from "../controllers/shortUrl.controller";
+import validation from "../middleware/validate";
+import shortUrlValidation from "../models/shortUrl.validation";
 
 const routes = require("express").Router();
 
@@ -10,5 +16,9 @@ routes.get("/health-check", (req: Request, res: Response) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 });
+
+routes.post("/api/url", validation(shortUrlValidation), createShortUrl);
+
+routes.get("/:shortid", handleRedirect);
 
 export default routes;
