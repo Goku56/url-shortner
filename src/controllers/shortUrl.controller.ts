@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import shortUrl from "../models/shortUrl.model";
+import analytics from "../models/analytics.model";
 
 export const createShortUrl = async (req: Request, res: Response) => {
   try {
@@ -8,7 +9,8 @@ export const createShortUrl = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "Please enter valid url" });
     }
     const newUrl = await shortUrl.create({ destination });
-    // console.log(newUrl);
+
+    analytics.create({ shortUrl: newUrl._id });
     return res.status(200).json(newUrl);
   } catch (err) {
     console.log(err);
@@ -19,7 +21,7 @@ export const createShortUrl = async (req: Request, res: Response) => {
 export const handleRedirect = async (req: Request, res: Response) => {
   try {
     const { shortid } = req.params;
-    const url = await shortUrl.findOne({ shortId:shortid });
+    const url = await shortUrl.findOne({ shortId: shortid });
     if (!url) {
       return res.status(404).json({ message: "not found" });
     }

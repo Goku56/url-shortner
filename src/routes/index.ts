@@ -5,6 +5,7 @@ import {
 } from "../controllers/shortUrl.controller";
 import validation from "../middleware/validate";
 import shortUrlValidation from "../models/shortUrl.validation";
+import { getAnalytics } from "../controllers/analytics.controller";
 
 const routes = require("express").Router();
 
@@ -17,8 +18,10 @@ routes.get("/health-check", (req: Request, res: Response) => {
   }
 });
 
-routes.post("/api/url", validation(shortUrlValidation), createShortUrl);
+routes.post("/api/url", createShortUrl);
 
 routes.get("/:shortid", handleRedirect);
+
+routes.get("/api/analytics", getAnalytics);
 
 export default routes;
