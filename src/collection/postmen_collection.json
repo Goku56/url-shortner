@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "8401d596-8a03-4a77-a203-4287f03b0ac4",
+		"name": "URL Shortner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13044602",
+		"_collection_link": "https://gokulmodi.postman.co/workspace/Team-Workspace~cd396f07-1d53-47ca-89ed-1ed4a6ed2bc3/collection/13044602-8401d596-8a03-4a77-a203-4287f03b0ac4?action=share&source=collection_link&creator=13044602"
+	},
+	"item": [
+		{
+			"name": "destination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destination\":\"https://google.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/url",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"url"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health-check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "redirect url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/gNXepg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"gNXepg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Analytics",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
